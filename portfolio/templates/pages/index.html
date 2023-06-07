@@ -4,7 +4,9 @@
   <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 {% endblock %}
 {% block title %}Reza Shakeri{% endblock %}
-
+{% block social_media %}
+  {% include 'shared/social_media.html' %}
+{% endblock %}
 {% block content %}
   <div id="main-menu">
     <div id="main-menu-items">
