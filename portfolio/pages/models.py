@@ -29,3 +29,8 @@ class ContactUs(models.Model):
     last_name = models.CharField(max_length=200)
     email = models.EmailField(validators=[validators.validate_email])
     message = models.TextField()
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
