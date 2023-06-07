@@ -52,6 +52,10 @@ class ContactUs(models.Model):
     message = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"From: {self.email} | Time: {self.created_on}"
+
+
 class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
