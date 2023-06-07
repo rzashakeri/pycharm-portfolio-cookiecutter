@@ -1,5 +1,8 @@
 {% extends "base.html" %}
-
+{% load static %}
+{% block javascript %}
+  <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+{% endblock %}
 {% block title %}Reza Shakeri{% endblock %}
 
 {% block content %}
