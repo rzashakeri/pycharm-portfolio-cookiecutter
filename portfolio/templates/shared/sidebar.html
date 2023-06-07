@@ -1,0 +1,165 @@
+{% load static i18n %}
+<div id="sidebar">
+  <div class="left-bar">
+    <div class="left-bar-item" onclick="showContent()">
+      <div class="left-bar-item-text">{% translate "project" %}</div>
+      <img
+        class="left-bar-item-icon"
+        src="{% static 'images/icons/projectDirectory.svg' %}"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="sidebar-content" style="display: none">
+    <div class="sidebar-header">
+      <img src="{% static 'images/icons/menu-open.svg' %}" alt=""/>
+      <p>{% translate "project" %}</p>
+    </div>
+    <div class="sidebar-first-header sidebar-item" onclick="changeFirstHeaderIcon()">
+      <img
+        class="sidebar-first-header-icon"
+        src="{% static 'images/icons/play_forward.svg' %}"
+        alt=""
+      />
+      <img src="{% static 'images/icons/menu-open.svg' %}" alt=""/>
+      <p class="sidebar-item-link">portfolio</p>
+    </div>
+    <div class="sidebar-items" style="display: none;">
+      <div class="sidebar-project-items">
+        <div class="sidebar-projects-head" onclick="changeProjectsIcon()">
+          <img
+            class="sidebar-projects-icon"
+            src="{% static 'images/icons/play_forward.svg' %}"
+            alt=""
+          />
+          <img src="{% static 'images/icons/menu-open.svg' %}" alt=""/>
+          <p class="sidebar-item-link">{% translate "project" %}</p>
+        </div>
+        <div class="sidebar-projects-content" style="display: none;">
+          <div class="sidebar-projects-items">
+            <div class="sidebar-item sidebar-project-item">
+              <img
+                class="sidebar-item-icon sidebar-project-icon"
+                src="{% static 'images/icons/html5.svg' %}"
+                alt=""
+              />
+              <a class="sidebar-item-link sidebar-project-link" href="#">file-validator.html</a>
+            </div>
+            <div class="sidebar-item sidebar-project-item">
+              <img
+                class="sidebar-item-icon sidebar-project-icon"
+                src="{% static 'images/icons/html5.svg' %}"
+                alt=""
+              />
+              <a class="sidebar-item-link sidebar-project-link" href="#">Instagram-Assistant.html</a>
+            </div>
+            <div class="sidebar-item sidebar-project-item">
+              <img
+                class="sidebar-item-icon sidebar-project-icon"
+                src="{% static 'images/icons/html5.svg' %}"
+                alt=""
+              />
+              <a class="sidebar-item-link sidebar-project-link" href="#">django-audio-validator.html</a>
+            </div>
+            <div class="sidebar-item sidebar-project-item">
+              <img
+                class="sidebar-item-icon sidebar-project-icon"
+                src="{% static 'images/icons/html5.svg' %}"
+                alt=""
+              />
+              <a class="sidebar-item-link sidebar-project-link" href="#">gpt4free-python-package.html</a>
+            </div>
+            <div class="sidebar-item sidebar-project-item">
+              <img
+                class="sidebar-item-icon sidebar-project-icon"
+                src="{% static 'images/icons/html5.svg' %}"
+                alt=""
+              />
+              <a class="sidebar-item-link sidebar-project-link" href="#">Lorem-Farsi.html</a>
+            </div>
+            <div class="sidebar-item sidebar-project-item">
+              <img
+                class="sidebar-item-icon sidebar-project-icon"
+                src="{% static 'images/icons/html5.svg' %}"
+                alt=""
+              />
+              <a class="sidebar-item-link sidebar-project-link" href="#">Happier.html</a>
+            </div>
+            <div class="sidebar-item sidebar-project-item">
+              <img
+                class="sidebar-item-icon sidebar-project-icon"
+                src="{% static 'images/icons/html5.svg' %}"
+                alt=""
+              />
+              <a class="sidebar-item-link sidebar-project-link" href="#">telegram-bot-template.html</a>
+            </div>
+            <div class="sidebar-item sidebar-project-item">
+              <img
+                class="sidebar-item-icon sidebar-project-icon"
+                src="{% static 'images/icons/html5.svg' %}"
+                alt=""
+              />
+              <a class="sidebar-item-link sidebar-project-link" href="#">beautify-github-profile.html</a>
+            </div>
+            <div class="sidebar-item sidebar-project-item">
+              <img
+                class="sidebar-item-icon sidebar-project-icon"
+                src="{% static 'images/icons/html5.svg' %}"
+                alt=""
+              />
+              <a class="sidebar-item-link sidebar-project-link" href="#">awesome-persian.html</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-item">
+        <img
+          class="sidebar-item-icon"
+          src="{% static 'images/icons/html5.svg' %}"
+          alt=""
+        />
+        <a class="sidebar-item-link" href="#">index.html</a>
+      </div>
+      <div class="sidebar-item">
+        <img
+          class="sidebar-item-icon"
+          src="{% static 'images/icons/html5.svg' %}"
+          alt=""
+        />
+        <a class="sidebar-item-link" href="#">about.html</a>
+      </div>
+      <div class="sidebar-item">
+        <img
+          class="sidebar-item-icon"
+          src="{% static 'images/icons/css.svg' %}"
+          alt=""
+        />
+        <a class="sidebar-item-link" href="#">skills.css</a>
+      </div>
+      <div class="sidebar-item">
+        <img
+          class="sidebar-item-icon"
+          src="{% static 'images/icons/javaScript.svg' %}"
+          alt=""
+        />
+        <a class="sidebar-item-link" href="#">projects.js</a>
+      </div>
+      <div class="sidebar-item">
+        <img
+          class="sidebar-item-icon"
+          src="{% static 'images/icons/python.svg' %}"
+          alt=""
+        />
+        <a class="sidebar-item-link" href="#">contact.py</a>
+      </div>
+      <div class="sidebar-item">
+        <img
+          class="sidebar-item-icon"
+          src="{% static 'images/icons/cpp_dark.svg' %}"
+          alt=""
+        />
+        <a class="sidebar-item-link" href="#">projects.cpp</a>
+      </div>
+    </div>
+  </div>
+</div>
