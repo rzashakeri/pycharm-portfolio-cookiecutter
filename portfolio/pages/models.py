@@ -8,6 +8,8 @@ class SiteSettings(models.Model):
     title = models.CharField(max_length=255)
     job_title = models.CharField(max_length=255)
 
+    def __str__(self):
+        return f"{self.domain} | {self.title}"
 
 class Page(models.Model):
     title = models.CharField(max_length=200)
