@@ -11,13 +11,19 @@
   {% include 'shared/references/header.html' %}
   <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
 
-  {% block css %}
-  {% endblock %}
+  {% compress css %}
+    {% block css %}
+    {% endblock %}
+  {% endcompress %}
+
   <!-- Le javascript
   ================================================== -->
   {# Placed at the top of the document so pages load faster with defer #}
-  {% block javascript %}
-  {% endblock javascript %}
+  {% compress js %}
+    {% block javascript %}
+    {% endblock javascript %}
+  {% endcompress %}
+
 </head>
 <body>
 
