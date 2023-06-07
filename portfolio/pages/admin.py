@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from portfolio.pages.models import Page, About, SkillCategory, Skill, ContactUs, Project
+from portfolio.pages.models import Page, About, SkillCategory, Skill, ContactUs, Project, SiteSettings
 
+admin.site.register(SiteSettings)
 admin.site.register(Page)
 admin.site.register(About)
 admin.site.register(SkillCategory)
