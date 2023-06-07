@@ -39,7 +39,8 @@
       {% include 'shared/sidebar.html' %}
       <div id="resizer"></div>
       <div id="main">
-        {% include 'shared/social_media.html' %}
+        {% block social_media %}{% endblock %}
+        {% block main_top_bar %}{% endblock %}
         <div id="main-content" style="overflow: hidden;">
           {% block content %}
           {% endblock %}
