@@ -4,6 +4,7 @@ from django.db.models import CASCADE
 
 
 class SiteSettings(models.Model):
+    domain = models.URLField()
     title = models.CharField(max_length=255)
     job_title = models.CharField(max_length=255)
 
