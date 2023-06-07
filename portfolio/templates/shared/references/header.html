@@ -1,3 +1,6 @@
-{% load static %}
-<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
-<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+{% load static compress %}
+{% compress js %}
+{% endcompress %}
+{% compress css %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+{% endcompress %}
