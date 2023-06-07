@@ -3,6 +3,11 @@ from django.db import models
 from django.db.models import CASCADE
 
 
+class SiteSettings(models.Model):
+    title = models.CharField(max_length=255)
+    job_title = models.CharField(max_length=255)
+
+
 class Page(models.Model):
     title = models.CharField(max_length=200)
     icon = models.ImageField()
