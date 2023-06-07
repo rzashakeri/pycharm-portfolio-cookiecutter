@@ -41,6 +41,8 @@ class Skill(models.Model):
     name = models.CharField(max_length=50)
     icon = models.ImageField()
 
+    def __str__(self):
+        return f"{self.name} ({self.category})"
 
 class ContactUs(models.Model):
     first_name = models.CharField(max_length=200)
