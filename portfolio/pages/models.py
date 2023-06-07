@@ -44,12 +44,13 @@ class Skill(models.Model):
     def __str__(self):
         return f"{self.name} ({self.category})"
 
+
 class ContactUs(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField(validators=[validators.validate_email])
     message = models.TextField()
-
+    created_on = models.DateTimeField(auto_now_add=True)
 
 class Project(models.Model):
     name = models.CharField(max_length=200)
