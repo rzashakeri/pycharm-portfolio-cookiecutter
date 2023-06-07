@@ -25,6 +25,10 @@ class About(models.Model):
     body = models.TextField()
 
 
+    def __str__(self):
+        return self.title
+
+
 class SkillCategory(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
