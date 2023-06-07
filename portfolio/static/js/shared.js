@@ -40,12 +40,12 @@ function changeFirstHeaderIcon() {
     if (element.className === "sidebar-first-header-icon") {
         element.setAttribute(
             "src",
-            "./assets/images/icons/findAndShowNextMatches.svg"
+            "static/images/icons/findAndShowNextMatches.svg"
         );
         element.className += " open";
         sidebarItems.removeAttribute("style");
     } else {
-        element.setAttribute("src", "./assets/images/icons/play_forward.svg");
+        element.setAttribute("src", "static/images/icons/play_forward.svg");
         element.className = "sidebar-first-header-icon";
         sidebarItems.setAttribute("style", "display: none;");
     }
@@ -57,12 +57,12 @@ function changeProjectsIcon() {
     if (element.className === "sidebar-projects-icon") {
         element.setAttribute(
             "src",
-            "./assets/images/icons/findAndShowNextMatches.svg"
+            "static/images/icons/findAndShowNextMatches.svg"
         );
         element.className += " open";
         sidebarItems.removeAttribute("style");
     } else {
-        element.setAttribute("src", "./assets/images/icons/play_forward.svg");
+        element.setAttribute("src", "static/images/icons/play_forward.svg");
         element.className = "sidebar-projects-icon";
         sidebarItems.setAttribute("style", "display: none;");
     }
