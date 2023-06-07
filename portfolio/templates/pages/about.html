@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 {% block javascript %}
   <script type="text/javascript" src="{% static 'js/about.js' %}"></script>
 {% endblock %}
-{% block title %}Reza Shakeri | about{% endblock %}
+{% block title %}Reza Shakeri | {% translate "about" %}{% endblock %}
 {% block main_top_bar %}
   <div id="main-top-bar">
     <div id="main-top-bar-item">
