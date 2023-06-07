@@ -51,7 +51,7 @@
   </div>
 </main>
 {% include 'shared/references/footer.html' %}
-
+{% block extra_javascript %}{% endblock %}
 {% block inline_javascript %}
   {% comment %}
     Script tags with only code, no src (defer by default). To run

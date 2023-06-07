@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
-{% block javascript %}
+{% block extra_javascript %}
   <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 {% endblock %}
-{% block title %}Reza Shakeri{% endblock %}
+{% block title %}Reza Shakeri | {{ page.title }}{% endblock %}
 {% block social_media %}
   {% include 'shared/social_media.html' %}
 {% endblock %}
@@ -11,8 +11,8 @@
   <div id="main-menu">
     <div id="main-menu-items">
       <div class="main-menu-head">
-        <h1 class="main-menu-head-title">Reza Shakeri</h1>
-        <p class="main-menu-head-description">Software Engineer</p>
+        <h1 class="main-menu-head-title">{{ portfolio.title }}</h1>
+        <p class="main-menu-head-description">{{ portfolio.job_title }}</p>
       </div>
       <div class="main-menu-item">
         <p class="main-menu-item-text">About Me</p>
