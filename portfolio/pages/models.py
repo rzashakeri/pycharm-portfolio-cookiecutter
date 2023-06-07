@@ -1,3 +1,4 @@
+from django.core import validators
 from django.db import models
 from django.db.models import CASCADE
 
@@ -21,3 +22,10 @@ class Skill(models.Model):
     category = models.ForeignKey(SkillCategory, on_delete=CASCADE)
     name = models.CharField(max_length=50)
     icon = models.ImageField()
+
+
+class ContactUs(models.Model):
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    email = models.EmailField(validators=[validators.validate_email])
+    message = models.TextField()
