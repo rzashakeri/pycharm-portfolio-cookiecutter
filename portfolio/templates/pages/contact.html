@@ -57,7 +57,7 @@
                     <div class="breadcrumb-icon">
                         <img src="./assets/images/icons/html5.svg" width="17" alt="">
                     </div>
-                    <p class="breadcrumb-title">about.html</p>
+                    <p class="breadcrumb-title">index.html</p>
                 </div>
             </div>
             <div class="navbar-social-icons">
@@ -304,27 +304,31 @@
             </div>
             <div id="resizer"></div>
             <div id="main">
-                <div id="main-top-bar">
-                    <div id="main-top-bar-item">
-                        <img src="./assets/images/icons/html5.svg" alt="user svg"/>
-                        <p id="main-top-bar-item-text">about.html</p>
-                        <img src="./assets/images/icons/close.svg" alt=""/>
-                    </div>
-                </div>
                 <div id="main-content">
-                    <div class="about-section">
-                        <h1 class="about-title">Hi, My Name Is Reza Shakeri 👋</h1>
-                        <p class="about-description">
-                            My name is Reza Shakeri, and I began coding when I was 13 years old. In the same year, I started a blog about animals called <a href="https://animalsiran.mianblog.com">animalsiran.mianblog.com</a>. There, I became acquainted with <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>, and I customization of this blog. This was not the end of the story, since at the end of the same year, I created an Android app called <a href="https://cafebazaar.ir/app/ir.rezasoft.app">Iran's animals</a> and launched it on Cafe Bazar and Myket Market, which was about Iran's animals. After that, I began learning Python, gained experience with and used various <b>hacking</b> and security tools, and began learning penetration testing. I remained in this field for a while, learning various things. After that, I proceeded to WordPress website design and produced my first website, WordPress Magazine, which was about <b>WordPress</b> and related tutorials. For numerous years, I worked
-                            with WordPress. I enrolled at university, where they taught us <b>C++</b>. At the same time, I launched an Instagram community called
-                            <a href="https://www.instagram.com/barnamenevisiinsta">barnamenevisiinsta</a>, which grew to become one of the first and largest Persian communities of Iranian programmers, and I was providing programming material for it. I saw that it was my turn to create my own system, so I learned C# and created several Windows programs such as accounting applications, libraries, and calculators, and I started making games with unity and also created a 2D game, but the purpose of learning <b>C#</b> was to learn the <b>ASP.NET</b> Core framework, why?
-                            Because I had heard about establishing Stack Overflow using this framework, I learnt it and built a blog and an online store with it, but I couldn't interact with it for different reasons, and that was the end of my use of <b>ASP.NET</b> Core. I went to learn <b>Django</b>, and the process was and still is really enjoyable for me. I used <b>Django</b> to create a blog and eventually an online store. However, this was insufficient because <b>Django</b> was more capable. So, what exactly did I do? I used it to create a social network called <a href="https://github.com/rzashakeri/Happier">Happier</a>, however I discovered that there is a difficulty validating the files supplied by the user. The Happier project was put on hold, and I wrote a new library called <a href="https://github.com/rzashakeri/django-audio-validator">django audio validator</a> to handle the problem of validating files, but it had a major flaw: it only validated audio files. In this case, I
-                            wrote a new library called
-                            <a href="https://github.com/file-validator/file-validator">file validator</a>, which validated all types of files and was well-tested and documented. Meanwhile, there was a major
-                            issue
-                            with publishing my content to Instagram, and that was the presence of rigorous filtering in the Islamic Republic, which made it difficult to upload my posts to Instagram. I decided to create a Telegram bot to upload my posts to Instagram via Telegram, and the outcome was <a href="https://github.com/rzashakeri/Instagram-Assistant">Instagram-Assistant</a>. In addition to uploading, I added other nice features like a lottery between likes and post comments, downloading any form of Instagram media, obtaining post statistics, and so on.
-                            This story continues, and I am learning new things and teaching them to others because this is how we learn best. I am also a student of <b>computer engineering</b>.
-                        </p>
+                    <div class="contact-us">
+                        <form class="contact-us-form" action="">
+                            <div class="contact-us-form-field first-name-form">
+                                <label for="first_name">first name</label>
+                                <input id="first_name" placeholder="First name" type="text">
+                            </div>
+
+                            <div class="contact-us-form-field last-name-form">
+                                <label for="last_name">last name</label>
+                                <input id="last_name" placeholder="Last name" type="text">
+                            </div>
+
+                            <div class="contact-us-form-field email-form">
+                                <label for="email">email</label>
+                                <input id="email" placeholder="Email" type="email">
+                            </div>
+
+                            <div class="contact-us-form-field message-form">
+                                <label for="contact-us-message">message</label>
+                                <textarea id="contact-us-message" placeholder="Your Message" rows="3" type="text"></textarea>
+                            </div>
+
+                            <input class="contact-us-button mail-btn" value="Send" type="button">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -344,6 +348,6 @@
 <script type="text/javascript" src="https://unpkg.com/typeit"></script>
 <script src="https://kit.fontawesome.com/5b50cdd3ae.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./assets/js/shared.js"></script>
-<script type="text/javascript" src="./assets/js/about.js"></script>
+<script type="text/javascript" src="./assets/js/contact.js"></script>
 </body>
 </html>
