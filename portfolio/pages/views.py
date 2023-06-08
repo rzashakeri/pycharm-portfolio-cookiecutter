@@ -6,7 +6,7 @@ from portfolio.pages.models import SiteSettings, Page
 
 class HomeView(View):
     def get(self, request):
-        page = Page.objects.first()
+        page = Page.objects.get(title="index.html")
         portfolio = SiteSettings.objects.first()
         context = {
             "page": page,
