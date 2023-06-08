@@ -14,7 +14,7 @@ class SiteSettings(models.Model):
 
 class Page(models.Model):
     title = models.CharField(max_length=200)
-    icon = models.ImageField()
+    icon = models.FileField(upload_to="icons/")
 
     def __str__(self):
         return self.title
