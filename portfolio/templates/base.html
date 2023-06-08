@@ -41,7 +41,7 @@
       <div id="main">
         {% block social_media %}{% endblock %}
         {% block main_top_bar %}{% endblock %}
-        <div id="main-content" style="overflow: hidden;">
+        <div id="main-content" {% if request.resolver_match.url_name == "home" %}style="overflow: hidden;"{% endif %}>
           {% block content %}
           {% endblock %}
         </div>
