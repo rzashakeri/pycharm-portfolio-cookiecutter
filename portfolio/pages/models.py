@@ -15,12 +15,14 @@ class SiteSettings(models.Model):
 class Page(models.Model):
     title = models.CharField(max_length=200)
     icon = models.FileField(upload_to="icons/")
+    parent = models.ForeignKey("Page", on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title
 
 
 class About(models.Model):
+    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=200)
     body = models.TextField()
 
@@ -37,6 +39,7 @@ class SkillCategory(models.Model):
 
 
 class Skill(models.Model):
+    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True)
     category = models.ForeignKey(SkillCategory, on_delete=CASCADE)
     name = models.CharField(max_length=50)
     icon = models.ImageField()
@@ -46,6 +49,7 @@ class Skill(models.Model):
 
 
 class ContactUs(models.Model):
+    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField(validators=[validators.validate_email])
@@ -57,6 +61,7 @@ class ContactUs(models.Model):
 
 
 class Project(models.Model):
+    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
 
