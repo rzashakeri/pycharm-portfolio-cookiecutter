@@ -15,7 +15,7 @@
       <img src="{% static 'images/icons/menu-open.svg' %}" alt=""/>
       <p>{% translate "project" %}</p>
     </div>
-    <div class="sidebar-first-header sidebar-item" onclick="changeFirstHeaderIcon()">
+    <div class="sidebar-first-header sidebar-item" onclick="OpenClose('sidebar-first-header-icon', 'sidebar-items')">
       <img
         class="sidebar-first-header-icon"
         src="{% static 'images/icons/play_forward.svg' %}"
@@ -26,7 +26,7 @@
     </div>
     <div class="sidebar-items" style="display: none;">
       <div class="sidebar-project-items">
-        <div class="sidebar-projects-head" onclick="changeProjectsIcon()">
+        <div class="sidebar-projects-head" onclick="OpenClose('sidebar-projects-icon', 'sidebar-projects-content')">
           <img
             class="sidebar-projects-icon"
             src="{% static 'images/icons/play_forward.svg' %}"
