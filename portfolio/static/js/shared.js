@@ -34,10 +34,10 @@ resizer.addEventListener("mousedown", (event) => {
 
 setInterval(() => $("#dateTime").text(new Date().toLocaleString()), 1000);
 
-function changeFirstHeaderIcon() {
-    let element = document.querySelector(".sidebar-first-header-icon");
-    let sidebarItems = document.querySelector(".sidebar-items");
-    if (element.className === "sidebar-first-header-icon") {
+function OpenClose(elementClass, SidebarItemsClass) {
+    let element = document.querySelector(`.${elementClass}`);
+    let sidebarItems = document.querySelector(`.${SidebarItemsClass}`);
+    if (element.className === elementClass) {
         element.setAttribute(
             "src",
             "static/images/icons/findAndShowNextMatches.svg"
@@ -46,37 +46,8 @@ function changeFirstHeaderIcon() {
         sidebarItems.removeAttribute("style");
     } else {
         element.setAttribute("src", "static/images/icons/play_forward.svg");
-        element.className = "sidebar-first-header-icon";
+        element.className = elementClass;
         sidebarItems.setAttribute("style", "display: none;");
-    }
-}
-
-function changeProjectsIcon() {
-    let element = document.querySelector(".sidebar-projects-icon");
-    let sidebarItems = document.querySelector(".sidebar-projects-content");
-    if (element.className === "sidebar-projects-icon") {
-        element.setAttribute(
-            "src",
-            "static/images/icons/findAndShowNextMatches.svg"
-        );
-        element.className += " open";
-        sidebarItems.removeAttribute("style");
-    } else {
-        element.setAttribute("src", "static/images/icons/play_forward.svg");
-        element.className = "sidebar-projects-icon";
-        sidebarItems.setAttribute("style", "display: none;");
-    }
-}
-
-function showSocialMediaIcons() {
-    let element = document.querySelector(".social-media");
-    if (element.style.display === "none") {
-        element.setAttribute("style", "display: flex;");
-    } else {
-        element.setAttribute("style", "display: none;");
-    }
-    if (window.matchMedia("(max-width: 600px)").matches && element.style.display === "none") {
-        element.setAttribute("style", "display: flex;");
     }
 }
 
