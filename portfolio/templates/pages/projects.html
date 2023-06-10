@@ -22,180 +22,26 @@
         <h1 class="project-head-text">{% translate "Projects" %}</h1>
       </div>
       <div class="project-content">
-        <div class="card rounded">
-          <div class="card-overlay">
-          </div>
-          <div class="card-heading">
-            <div class="badges">
-              <div class="badge github-stars-badge">
-                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                <span>stars: 25</span>
-              </div>
-              <div class="badge github-forks-badge">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <span>fork: 25</span>
-              </div>
+        {% for project in projects %}
+          <div class="card rounded">
+            <div class="card-overlay">
             </div>
-            <span class="card-heading-title small"><a class="card-heading-link" href="#">File Validator</a></span>
-            <h2 class="card-heading-description"> The first Python validation package uses type, mime, extension,
-              magic numbers, and size to validate files.</h2>
-          </div>
-        </div>
-        <div class="card rounded">
-          <div class="card-overlay">
-          </div>
-          <div class="card-heading">
-            <div class="badges">
-              <div class="badge github-stars-badge">
-                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                <span>stars: 25</span>
+            <div class="card-heading">
+              <div class="badges">
+                <div class="badge github-stars-badge">
+                  <i class="fa fa-star fa-fade" aria-hidden="true"></i>
+                  <span>stars: {{ project.star_count }}</span>
+                </div>
+                <div class="badge github-forks-badge">
+                  <i class="fa fa-code-fork" aria-hidden="true"></i>
+                  <span>fork: {{ project.fork_count }}</span>
+                </div>
               </div>
-              <div class="badge github-forks-badge">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <span>fork: 25</span>
-              </div>
+              <span class="card-heading-title small"><a class="card-heading-link" href="#">{{ project.name }}</a></span>
+              <h2 class="card-heading-description">{{ project.description }}</h2>
             </div>
-            <span class="card-heading-title small"><a class="card-heading-link"
-                                                      href="#">Instagram Assistant</a></span>
-            <h2 class="card-heading-description">Instagram Assistant in telegram with extra feature</h2>
           </div>
-        </div>
-        <div class="card rounded">
-          <div class="card-overlay">
-          </div>
-          <div class="card-heading">
-            <div class="badges">
-              <div class="badge github-stars-badge">
-                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                <span>stars: 25</span>
-              </div>
-              <div class="badge github-forks-badge">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <span>fork: 25</span>
-              </div>
-            </div>
-            <span class="card-heading-title small"><a class="card-heading-link"
-                                                      href="#">django audio validator</a></span>
-            <h2 class="card-heading-description">Django audio validator that verifies the mime and extension of
-              audio files. </h2>
-          </div>
-        </div>
-        <div class="card rounded">
-          <div class="card-overlay">
-          </div>
-          <div class="card-heading">
-            <div class="badges">
-              <div class="badge github-stars-badge">
-                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                <span>stars: 25</span>
-              </div>
-              <div class="badge github-forks-badge">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <span>fork: 25</span>
-              </div>
-            </div>
-            <span class="card-heading-title small"><a class="card-heading-link"
-                                                      href="#">gpt4free python package</a></span>
-            <h2 class="card-heading-description">decentralising the Ai Industry, just some language model
-              api's... </h2>
-          </div>
-        </div>
-        <div class="card rounded">
-          <div class="card-overlay">
-          </div>
-          <div class="card-heading">
-            <div class="badges">
-              <div class="badge github-stars-badge">
-                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                <span>stars: 25</span>
-              </div>
-              <div class="badge github-forks-badge">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <span>fork: 25</span>
-              </div>
-            </div>
-            <span class="card-heading-title small"><a class="card-heading-link" href="#">Lorem Farsi</a></span>
-            <h2 class="card-heading-description">This is a plugin for Visual Studio Code with which you can easily
-              create Persian Lorem ipsum and random sentences and words to test your projects. </h2>
-          </div>
-        </div>
-        <div class="card rounded">
-          <div class="card-overlay">
-          </div>
-          <div class="card-heading">
-            <div class="badges">
-              <div class="badge github-stars-badge">
-                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                <span>stars: 25</span>
-              </div>
-              <div class="badge github-forks-badge">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <span>fork: 25</span>
-              </div>
-            </div>
-            <span class="card-heading-title small"><a class="card-heading-link" href="#">Happier</a></span>
-            <h2 class="card-heading-description">a social network created by django</h2>
-          </div>
-        </div>
-        <div class="card rounded">
-          <div class="card-overlay">
-          </div>
-          <div class="card-heading">
-            <div class="badges">
-              <div class="badge github-stars-badge">
-                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                <span>stars: 25</span>
-              </div>
-              <div class="badge github-forks-badge">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <span>fork: 25</span>
-              </div>
-            </div>
-            <span class="card-heading-title small"><a class="card-heading-link"
-                                                      href="#">telegram bot template</a></span>
-            <h2 class="card-heading-description">Template to build a telegram robot using python-telgram-bot </h2>
-          </div>
-        </div>
-        <div class="card rounded">
-          <div class="card-overlay">
-          </div>
-          <div class="card-heading">
-            <div class="badges">
-              <div class="badge github-stars-badge">
-                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                <span>stars: 25</span>
-              </div>
-              <div class="badge github-forks-badge">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <span>fork: 25</span>
-              </div>
-            </div>
-            <span class="card-heading-title small"><a class="card-heading-link"
-                                                      href="#">beautify github profile</a></span>
-            <h2 class="card-heading-description">This repository will assist you in creating a more beautiful and
-              appealing github profile, and you will have access to a comprehensive range of tools and tutorials
-              for beautifying your github profile.</h2>
-          </div>
-        </div>
-        <div class="card rounded">
-          <div class="card-overlay">
-          </div>
-          <div class="card-heading">
-            <div class="badges">
-              <div class="badge github-stars-badge">
-                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                <span>stars: 25</span>
-              </div>
-              <div class="badge github-forks-badge">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <span>fork: 25</span>
-              </div>
-            </div>
-            <span class="card-heading-title small"><a class="card-heading-link"
-                                                      href="#">awesome persian</a></span>
-            <h2 class="card-heading-description"></h2>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
