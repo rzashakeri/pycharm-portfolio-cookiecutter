@@ -17,7 +17,7 @@ class SiteSettings(models.Model):
 class Page(models.Model):
     title = models.CharField(max_length=200)
     icon = models.FileField(upload_to="icons/")
-    slug = models.SlugField(max_length=300)
+    slug = models.SlugField(max_length=300, unique=True)
     parent = models.ForeignKey("Page", on_delete=models.CASCADE, null=True, blank=True, related_name='children')
     is_parent = models.BooleanField(default=False)
 
@@ -26,6 +26,7 @@ class Page(models.Model):
 
 
 class About(models.Model):
+    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True, blank=True)
     heading = models.CharField(max_length=200)
     body = models.TextField()
 
@@ -51,6 +52,7 @@ class Skill(models.Model):
 
 
 class ContactUs(models.Model):
+    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True, blank=True)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField(validators=[validators.validate_email])
@@ -62,6 +64,7 @@ class ContactUs(models.Model):
 
 
 class Project(models.Model):
+    page = models.ForeignKey(Page, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=300)
     star_count = models.IntegerField()
