@@ -26,16 +26,25 @@
 
 </head>
 <body>
-
+{% if messages %}
+  {% for message in messages %}
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <div class="top-bar-icon">
+          <i class="{{ message.tags }}" style="color: #ffffff;"></i>
+        </div>
+        <p class="top-bar-text">{{ message }}</p>
+      </div>
+      <span id="top-bar-close" onclick="this.parentNode.remove(); return false;">
+        <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff; cursor: pointer;"></i>
+      </span>
+    </div>
+  {% endfor %}
+{% endif %}
 {% include 'shared/header.html' %}
 <main class="main">
   <div id="wrapper">
     <div id="container">
-      {% if messages %}
-        {% for message in messages %}
-
-        {% endfor %}
-      {% endif %}
       {% render_partial 'pages.views.SideBarView' %}
       <div id="resizer"></div>
       <div id="main">
