@@ -46,7 +46,7 @@
                       src="{{ child.icon.url }}"
                       alt=""
                     />
-                    <a class="sidebar-item-link sidebar-project-link" href="#">{{ child.title }}</a>
+                    <a class="sidebar-item-link sidebar-project-link" href="/{{ child.slug }}">{{ child.title }}</a>
                   </div>
                 {% endfor %}
               </div>
@@ -60,7 +60,7 @@
                 src="{{ page.icon.url }}"
                 alt=""
               />
-              <a class="sidebar-item-link" href="#">{{ page.title }}</a>
+              <a class="sidebar-item-link" href="/{{ page.slug }}">{{ page.title }}</a>
             </div>
           {% endif %}
         {% endif %}
