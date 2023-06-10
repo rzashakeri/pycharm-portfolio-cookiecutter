@@ -1,4 +1,4 @@
-{% load static %}
+{% load static render_partial %}
 <header class="header">
   <nav class="navbar">
     <div class="navbar-menu">
@@ -31,7 +31,7 @@
             </li>
           </ul>
         </div>
-        <p class="navbar-title"><a href="{% url 'home' %}">project[{{ portfolio.domain }}]</a></p>
+        {% render_partial 'pages.views.render_navbar_title' %}
       </div>
       <div class="navbar-buttons">
         <img class="navbar-button navbar-minimize-button" src="{% static 'images/icons/minimize_dark.svg' %}" alt="">
@@ -45,14 +45,14 @@
           <div class="breadcrumb-icon">
             <img src="{% static 'images/icons/toolWindowProject.svg' %}" width="17" alt="">
           </div>
-          <p class="breadcrumb-title first"><a href="{% url 'home' %}">RezaShakeri</a></p>
+          <p class="breadcrumb-title first"><a href="{% url 'home' %}">{{ portfolio.name }}</a></p>
         </div>
         <img class="breadcrumb-arrow" src="{% static 'images/icons/play_forward.svg' %}" alt="">
         <div class="breadcrumb-head-item">
           <div class="breadcrumb-icon">
             <img src="{{ page.icon.url }}" width="17" alt="">
           </div>
-          <p class="breadcrumb-title"><a href="{{ about.get_absolute_url }}">{{ page.title }}</a></p>
+          <p class="breadcrumb-title"><a href="{{ page.slug }}">{{ page.title }}</a></p>
         </div>
       </div>
     </div>
