@@ -25,7 +25,7 @@ class Page(models.Model):
         return self.title
 
 
-class About(Page):
+class About(models.Model):
     heading = models.CharField(max_length=200)
     body = models.TextField()
 
@@ -41,7 +41,7 @@ class SkillCategory(models.Model):
         return self.name
 
 
-class Skill(Page):
+class Skill(models.Model):
     category = models.ForeignKey(SkillCategory, on_delete=CASCADE)
     name = models.CharField(max_length=100)
     thumbnail = models.ImageField()
@@ -50,7 +50,7 @@ class Skill(Page):
         return f"{self.name} ({self.category})"
 
 
-class ContactUs(Page):
+class ContactUs(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField(validators=[validators.validate_email])
@@ -61,7 +61,7 @@ class ContactUs(Page):
         return f"From: {self.email} | Time: {self.created_on}"
 
 
-class Project(Page):
+class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
 
