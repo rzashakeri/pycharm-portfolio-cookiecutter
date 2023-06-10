@@ -39,3 +39,11 @@ def render_navbar_title(request):
         "portfolio": portfolio
     }
     return render(request, "shared/partials/navbar_title.html", context=context)
+
+
+def breadcrumb_title(request):
+    portfolio = SiteSettings.objects.first()
+    context = {
+        "portfolio": portfolio
+    }
+    return render(request, "shared/partials/breadcrumb_title.html", context=context)
