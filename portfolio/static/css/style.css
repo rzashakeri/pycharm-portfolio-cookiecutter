@@ -280,6 +280,7 @@ table {
 
 .breadcrumb-title {
   font-size: 1.2rem;
+  width: max-content;
 }
 
 .breadcrumb-title a {
