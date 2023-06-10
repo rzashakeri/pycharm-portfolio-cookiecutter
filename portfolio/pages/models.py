@@ -1,3 +1,5 @@
+import datetime
+
 from django.core import validators
 from django.db import models
 from django.db.models import CASCADE
@@ -5,29 +7,30 @@ from django.db.models import CASCADE
 
 class SiteSettings(models.Model):
     domain = models.CharField(max_length=300)
-    title = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
     job_title = models.CharField(max_length=255)
 
     def __str__(self):
-        return f"{self.domain} | {self.title}"
+        return f"{self.domain} | {self.name}"
 
 
 class Page(models.Model):
     title = models.CharField(max_length=200)
     icon = models.FileField(upload_to="icons/")
-    parent = models.ForeignKey("Page", on_delete=models.CASCADE, null=True)
+    slug = models.SlugField(max_length=300)
+    parent = models.ForeignKey("Page", on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+    is_parent = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
 
 
-class About(models.Model):
-    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True)
-    title = models.CharField(max_length=200)
+class About(Page):
+    heading = models.CharField(max_length=200)
     body = models.TextField()
 
     def __str__(self):
-        return self.title
+        return self.heading
 
 
 class SkillCategory(models.Model):
@@ -38,18 +41,16 @@ class SkillCategory(models.Model):
         return self.name
 
 
-class Skill(models.Model):
-    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True)
+class Skill(Page):
     category = models.ForeignKey(SkillCategory, on_delete=CASCADE)
-    name = models.CharField(max_length=50)
-    icon = models.ImageField()
+    name = models.CharField(max_length=100)
+    thumbnail = models.ImageField()
 
     def __str__(self):
         return f"{self.name} ({self.category})"
 
 
-class ContactUs(models.Model):
-    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True)
+class ContactUs(Page):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField(validators=[validators.validate_email])
@@ -60,10 +61,9 @@ class ContactUs(models.Model):
         return f"From: {self.email} | Time: {self.created_on}"
 
 
-class Project(models.Model):
-    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True)
+class Project(Page):
     name = models.CharField(max_length=200)
     description = models.TextField()
 
     def __str__(self):
-        return {self.name}
+        return self.name
