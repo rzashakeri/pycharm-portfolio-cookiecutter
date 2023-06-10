@@ -1,4 +1,4 @@
-{% load static i18n compress %}<!DOCTYPE html>
+{% load static i18n compress render_partial %}<!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
@@ -36,7 +36,7 @@
 
         {% endfor %}
       {% endif %}
-      {% include 'shared/sidebar.html' %}
+      {% render_partial 'pages.views.SideBarView' %}
       <div id="resizer"></div>
       <div id="main">
         {% block social_media %}{% endblock %}
