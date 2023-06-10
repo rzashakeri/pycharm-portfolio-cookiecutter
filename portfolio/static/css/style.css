@@ -969,7 +969,7 @@ input[type=text], input[type=email], textarea {
   margin-bottom: 16px;
   resize: vertical;
   background: var(--color-header);
-  color: var(--color-text-light-grey)
+  color: var(--color-text-light-grey);
 }
 
 ::placeholder {
@@ -999,4 +999,46 @@ input[type=text], input[type=email], textarea {
 
 .fa-brands.fa-instagram {
   width: 10px;
+}
+
+
+/* ================================================ */
+/* top bar */
+/* ================================================ */
+
+
+
+.top-bar {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 1rem;
+  background-color: #323741;
+  justify-content: space-between;
+}
+
+.top-bar-content {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.top-bar-icon i {
+  width: 15px;
+}
+
+.top-bar-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  color: var(--color-text-light-grey);
+}
+
+/* ================================================ */
+/* error list */
+/* ================================================ */
+
+
+.errorlist li {
+  color: #c34242 ;
+  margin-top: -12px;
 }
