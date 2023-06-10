@@ -63,7 +63,10 @@ class ContactUs(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=200)
-    description = models.TextField()
+    slug = models.SlugField(max_length=300)
+    star_count = models.IntegerField()
+    fork_count = models.IntegerField()
+    description = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
