@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views import View
 from django.views.generic import TemplateView
 
@@ -7,9 +8,13 @@ from portfolio.pages.models import SiteSettings, Page, About
 
 class HomeView(View):
     def get(self, request):
+        if request.path == "/home/":
+            return redirect(reverse('home'))
         home = Page.objects.get(slug="home")
+        portfolio = SiteSettings.objects.first()
         context = {
             "page": home,
+            "portfolio": portfolio
         }
         return render(request, "pages/index.html", context=context)
 
