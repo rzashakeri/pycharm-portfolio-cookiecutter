@@ -539,7 +539,6 @@ table {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 0 10rem;
   overflow: scroll;
 }
 
@@ -696,6 +695,7 @@ table {
   flex-direction: column;
   gap: 30px;
   margin: 3rem 1rem;
+  padding: 0 10rem;
 }
 
 .about-title {
@@ -790,6 +790,7 @@ table {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 0 5rem;
 }
 
 .project-head {
@@ -1007,7 +1008,6 @@ input[type=text], input[type=email], textarea {
 /* ================================================ */
 
 
-
 .top-bar {
   display: flex;
   gap: 5px;
@@ -1039,6 +1039,6 @@ input[type=text], input[type=email], textarea {
 
 
 .errorlist li {
-  color: #c34242 ;
+  color: #c34242;
   margin-top: -12px;
 }
