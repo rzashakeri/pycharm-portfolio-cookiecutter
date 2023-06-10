@@ -45,14 +45,14 @@
           <div class="breadcrumb-icon">
             <img src="{% static 'images/icons/toolWindowProject.svg' %}" width="17" alt="">
           </div>
-          <p class="breadcrumb-title first"><a href="{% url 'home' %}">{{ portfolio.name }}</a></p>
+          {% render_partial 'pages.views.breadcrumb_title' %}
         </div>
         <img class="breadcrumb-arrow" src="{% static 'images/icons/play_forward.svg' %}" alt="">
         <div class="breadcrumb-head-item">
           <div class="breadcrumb-icon">
             <img src="{{ page.icon.url }}" width="17" alt="">
           </div>
-          <p class="breadcrumb-title"><a href="{{ page.slug }}">{{ page.title }}</a></p>
+          <p class="breadcrumb-title"><a href="/{{ page.slug }}">{{ page.title }}</a></p>
         </div>
       </div>
     </div>
