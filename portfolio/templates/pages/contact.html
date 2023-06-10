@@ -5,6 +5,15 @@
 {% endblock %}
 {% block title %}Reza Shakeri | {% translate "contact us" %}{% endblock %}
 {% block social_media %}{% endblock %}
+{% block main_top_bar %}
+  <div id="main-top-bar">
+    <div id="main-top-bar-item">
+      <img src="{{ page.icon.url }}" alt="user svg"/>
+      <p id="main-top-bar-item-text">{{ page.title }}</p>
+      <img src="{% static 'images/icons/close.svg' %}" alt=""/>
+    </div>
+  </div>
+{% endblock %}
 {% block content %}
   <div class="contact-us">
     <form class="contact-us-form" method="POST" action="">
