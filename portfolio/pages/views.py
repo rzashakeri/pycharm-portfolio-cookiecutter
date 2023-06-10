@@ -1,9 +1,11 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
 from django.views.generic import TemplateView
 
-from portfolio.pages.models import SiteSettings, Page, About
+from portfolio.pages.forms import ContactUsModelForm
+from portfolio.pages.models import SiteSettings, Page, About, ContactUs
 
 
 class HomeView(View):
@@ -21,11 +23,37 @@ class HomeView(View):
 
 class AboutView(View):
     def get(self, request):
+        about_us = Page.objects.get(slug="about-us")
         about = About.objects.first()
         context = {
-            "page": about
+            "page": about_us,
+            "about": about
         }
         return render(request, "pages/about.html", context=context)
+
+
+class ContactUsView(View):
+    def get(self, request):
+        contact_us_form = ContactUsModelForm()
+        contact_us = Page.objects.get(slug="contact-us")
+        context = {
+            "contact_us_form": contact_us_form,
+            "page": contact_us
+        }
+        return render(request, "pages/contact.html", context=context)
+
+    def post(self, request):
+        contact_us_form = ContactUsModelForm(request.POST)
+        contact_us = Page.objects.get(slug="contact-us")
+        context = {
+            "contact_us_form": contact_us_form,
+            "page": contact_us
+        }
+        if contact_us_form.is_valid():
+            contact_us_form.save()
+            messages.success(request, 'Message sent successfully', extra_tags='fa-sharp fa-solid fa-square-check fa-xl')
+            return render(request, "pages/contact.html", context=context)
+        return render(request, "pages/contact.html", context=context)
 
 
 class SideBarView(TemplateView):
