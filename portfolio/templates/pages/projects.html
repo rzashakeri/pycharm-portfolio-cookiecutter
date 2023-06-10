@@ -16,33 +16,31 @@
   </div>
 {% endblock %}
 {% block content %}
-  <div id="main-content" style="padding:0; margin-left: 55px;">
-    <div class="projects">
-      <div class="project-head">
-        <h1 class="project-head-text">{% translate "Projects" %}</h1>
-      </div>
-      <div class="project-content">
-        {% for project in projects %}
-          <div class="card rounded">
-            <div class="card-overlay">
-            </div>
-            <div class="card-heading">
-              <div class="badges">
-                <div class="badge github-stars-badge">
-                  <i class="fa fa-star fa-fade" aria-hidden="true"></i>
-                  <span>stars: {{ project.star_count }}</span>
-                </div>
-                <div class="badge github-forks-badge">
-                  <i class="fa fa-code-fork" aria-hidden="true"></i>
-                  <span>fork: {{ project.fork_count }}</span>
-                </div>
-              </div>
-              <span class="card-heading-title small"><a class="card-heading-link" href="#">{{ project.name }}</a></span>
-              <h2 class="card-heading-description">{{ project.description }}</h2>
-            </div>
+  <div class="projects">
+    <div class="project-head">
+      <h1 class="project-head-text">{% translate "Projects" %}</h1>
+    </div>
+    <div class="project-content">
+      {% for project in projects %}
+        <div class="card rounded">
+          <div class="card-overlay">
           </div>
-        {% endfor %}
-      </div>
+          <div class="card-heading">
+            <div class="badges">
+              <div class="badge github-stars-badge">
+                <i class="fa fa-star fa-fade" aria-hidden="true"></i>
+                <span>stars: {{ project.star_count }}</span>
+              </div>
+              <div class="badge github-forks-badge">
+                <i class="fa fa-code-fork" aria-hidden="true"></i>
+                <span>fork: {{ project.fork_count }}</span>
+              </div>
+            </div>
+            <span class="card-heading-title small"><a class="card-heading-link" href="#">{{ project.name }}</a></span>
+            <h2 class="card-heading-description">{{ project.description }}</h2>
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
 {% endblock content %}
