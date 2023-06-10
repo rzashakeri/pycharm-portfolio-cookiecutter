@@ -35,7 +35,7 @@
                 alt=""
               />
               <img src="{{ page.icon.url }}" alt=""/>
-              <p class="sidebar-item-link">{{ page.title }}</p>
+              <a href="{% url 'projects' %}" class="sidebar-item-link">{{ page.title }}</a>
             </div>
             <div class="sidebar-projects-content" style="display: none;">
               <div class="sidebar-projects-items">
@@ -46,7 +46,7 @@
                       src="{{ child.icon.url }}"
                       alt=""
                     />
-                    <a class="sidebar-item-link sidebar-project-link" href="/{{ child.slug }}">{{ child.title }}</a>
+                    <a class="sidebar-item-link sidebar-project-link" href="{% url 'project' slug=child.slug %}">{{ child.title }}</a>
                   </div>
                 {% endfor %}
               </div>
