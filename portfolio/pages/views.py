@@ -5,7 +5,7 @@ from django.views import View
 from django.views.generic import TemplateView
 
 from portfolio.pages.forms import ContactUsModelForm
-from portfolio.pages.models import SiteSettings, Page, About, ContactUs
+from portfolio.pages.models import SiteSettings, Page, About, ContactUs, Project
 
 
 class HomeView(View):
@@ -54,6 +54,17 @@ class ContactUsView(View):
             messages.success(request, 'Message sent successfully', extra_tags='fa-sharp fa-solid fa-square-check fa-xl')
             return render(request, "pages/contact.html", context=context)
         return render(request, "pages/contact.html", context=context)
+
+
+class ProjectsView(View):
+    def get(self, request):
+        page = Page.objects.get(slug="projects")
+        projects = Project.objects.all().order_by("-star_count")
+        context = {
+            "page": page,
+            "projects": projects
+        }
+        return render(request, "pages/projects.html", context=context)
 
 
 class SideBarView(TemplateView):
