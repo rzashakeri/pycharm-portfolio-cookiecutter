@@ -7,13 +7,7 @@
 {% block title %}Reza Shakeri | {% translate "projects" %}{% endblock %}
 {% block social_media %}{% endblock %}
 {% block main_top_bar %}
-  <div id="main-top-bar">
-    <div id="main-top-bar-item">
-      <img src="{% static 'images/icons/cpp_dark.svg' %}" alt="user svg"/>
-      <p id="main-top-bar-item-text">projects.html</p>
-      <img src="{% static 'images/icons/close.svg' %}" alt=""/>
-    </div>
-  </div>
+  {% include 'shared/partials/main_top_bar.html' %}
 {% endblock %}
 {% block content %}
   <div class="projects">

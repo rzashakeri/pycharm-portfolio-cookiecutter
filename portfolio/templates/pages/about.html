@@ -5,13 +5,7 @@
 {% endblock %}
 {% block title %}Reza Shakeri | {% translate "about" %}{% endblock %}
 {% block main_top_bar %}
-  <div id="main-top-bar">
-    <div id="main-top-bar-item">
-      <img src="{% static 'images/icons/html5.svg' %}" alt="user svg"/>
-      <p id="main-top-bar-item-text">{{ page.title }}</p>
-      <img src="{% static 'images/icons/close.svg' %}" alt=""/>
-    </div>
-  </div>
+  {% include 'shared/partials/main_top_bar.html' %}
 {% endblock %}
 {% block content %}
   <div class="about-section">
