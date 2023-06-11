@@ -551,18 +551,26 @@ table {
 #main-top-bar-item {
   background-color: #3d424b;
   padding: 6px;
-  display: flex;
+  display: table;
   align-items: center;
   gap: 8px;
   font-size: 1.1rem;
   font-weight: normal;
-  width: 135px;
   border-bottom: 3px solid #4269b9;
   justify-content: space-between;
 }
 
+#main-top-bar-content {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 #main-top-bar-item-text {
   color: var(--color-text-primary);
+  display: inline-block;
+  white-space: nowrap;
+
 }
 
 #main-about-text {
