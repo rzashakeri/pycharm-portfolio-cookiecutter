@@ -15,109 +15,20 @@
       <h1 class="skills-head-title">{% translate "skills" %}</h1>
     </div>
     <div class="skills-content">
-      <div class="skill-items">
-        <p class="skill-title">Languages</p>
-        <div class="skill-item">
-          <div class="skill">
-            <img class="skill-icon" src="https://techstack-generator.vercel.app/python-icon.svg" alt="">
-            <p class="skill-description">Python</p>
-          </div>
-          <div class="skill">
-            <img class="skill-icon" src="https://techstack-generator.vercel.app/csharp-icon.svg" alt="">
-            <p class="skill-description">C#</p>
-          </div>
-          <div class="skill">
-            <img class="skill-icon" src="https://techstack-generator.vercel.app/cpp-icon.svg" alt="">
-            <p class="skill-description">C++</p>
-          </div>
-          <div class="skill">
-            <img class="skill-icon" src="https://techstack-generator.vercel.app/js-icon.svg" alt="">
-            <p class="skill-description">JavaScript</p>
-          </div>
-          <div class="skill">
-            <img class="skill-icon" src="https://skillicons.dev/icons?i=html" alt="">
-            <p class="skill-description">HTML</p>
-          </div>
-          <div class="skill">
-            <img class="skill-icon" src="https://skillicons.dev/icons?i=css" alt="">
-            <p class="skill-description">CSS</p>
+      {% for category in skill_category %}
+        <div class="skill-items">
+          <p class="skill-title">{{ category.name }}</p>
+          <div class="skill-item">
+            {% for skill in category.skill_set.all %}
+              <div class="skill">
+                <img class="skill-icon" src="{{ skill.thumbnail_url }}" alt="">
+                <p class="skill-description">{{ skill.name }}</p>
+              </div>
+            {% endfor %}
           </div>
         </div>
-      </div>
-      <div class="skill-items">
-        <p class="skill-title">Frameworks</p>
-        <div class="skill-item">
-          <div class="skill">
-            <img class="skill-icon" src="https://techstack-generator.vercel.app/django-icon.svg" alt="">
-            <p class="skill-description">Django</p>
-          </div>
-          <div class="skill">
-            <img class="skill-icon" src="https://skillicons.dev/icons?i=dotnet" alt="">
-            <p class="skill-description">ASP.NET Core</p>
-          </div>
-          <div class="skill">
-            <img class="skill-icon" src="https://skillicons.dev/icons?i=bootstrap" alt="">
-            <p class="skill-description">Bootstrap</p>
-          </div>
-          <div class="skill">
-            <img class="skill-icon" src="https://skillicons.dev/icons?i=tailwind" alt="">
-            <p class="skill-description">Tailwind CSS</p>
-          </div>
-        </div>
-      </div>
-      <div class="skill-items">
-        <p class="skill-title">Libraries</p>
-        <div class="skill-item">
-          <div class="skill">
-            <img class="skill-icon" src="https://skillicons.dev/icons?i=jquery" alt="">
-            <p class="skill-description">JQuery</p>
-          </div>
-        </div>
-      </div>
-      <div class="skill-items">
-        <p class="skill-title">Databases</p>
-        <div class="skill-item">
-          <div class="skill">
-            <img class="skill-icon" src="https://skillicons.dev/icons?i=postgres" alt="">
-            <p class="skill-description">PostgreSQL</p>
-          </div>
-        </div>
-      </div>
-      <div class="skill-items">
-        <p class="skill-title">Version Control</p>
-        <div class="skill-item">
-          <div class="skill">
-            <img class="skill-icon"
-                 src="https://user-images.githubusercontent.com/25181517/192108372-f71d70ac-7ae6-4c0d-8395-51d8870c2ef0.png"
-                 alt="">
-            <p class="skill-description">Git</p>
-          </div>
-        </div>
-      </div>
-      <div class="skill-items">
-        <p class="skill-title">Tools</p>
-        <div class="skill-item">
-          <div class="skill">
-            <img class="skill-icon" src="https://techstack-generator.vercel.app/github-icon.svg" alt="">
-            <p class="skill-description">Github</p>
-          </div>
-          <div class="skill">
-            <img class="skill-icon"
-                 src="https://user-images.githubusercontent.com/25181517/192108376-c675d39b-90f6-4073-bde6-5a9291644657.png"
-                 alt="">
-            <p class="skill-description">Gitlab</p>
-          </div>
-        </div>
-      </div>
-      <div class="skill-items">
-        <p class="skill-title">APIs</p>
-        <div class="skill-item">
-          <div class="skill">
-            <img class="skill-icon" src="https://techstack-generator.vercel.app/restapi-icon.svg" alt="">
-            <p class="skill-description">Rest API</p>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
+
     </div>
   </div>
 {% endblock content %}
