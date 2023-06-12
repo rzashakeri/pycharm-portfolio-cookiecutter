@@ -1,5 +1,5 @@
 {
   "django": {
-    "settingsFile": "portfolio/config/settings/production.py"
+    "settingsFile": "config/settings/production.py"
   }
 }
