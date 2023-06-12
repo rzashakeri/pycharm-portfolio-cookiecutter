@@ -18,6 +18,34 @@ crispy-bootstrap5==0.7  # https://github.com/django-crispy-forms/crispy-bootstra
 django-compressor==4.3.1  # https://github.com/django-compressor/django-compressor
 django-redis==5.2.0  # https://github.com/jazzband/django-redis
 
+
+pytest-sugar==0.9.7  # https://github.com/Frozenball/pytest-sugar
+
+# Documentation
+# ------------------------------------------------------------------------------
+sphinx==6.2.1  # https://github.com/sphinx-doc/sphinx
+sphinx-autobuild==2021.3.14 # https://github.com/GaretJax/sphinx-autobuild
+
+# Code quality
+# ------------------------------------------------------------------------------
+flake8==6.0.0  # https://github.com/PyCQA/flake8
+flake8-isort==6.0.0  # https://github.com/gforcada/flake8-isort
+coverage==7.2.7  # https://github.com/nedbat/coveragepy
+black==23.3.0  # https://github.com/psf/black
+pylint-django==2.5.3  # https://github.com/PyCQA/pylint-django
+pre-commit==3.3.2  # https://github.com/pre-commit/pre-commit
+
+# Django
+# ------------------------------------------------------------------------------
+factory-boy==3.2.1  # https://github.com/FactoryBoy/factory_boy
+
+django-debug-toolbar==4.1.0  # https://github.com/jazzband/django-debug-toolbar
+django-extensions==3.2.3  # https://github.com/django-extensions/django-extensions
+django-coverage-plugin==3.0.0  # https://github.com/nedbat/django_coverage_plugin
+pytest-django==4.5.2  # https://github.com/pytest-dev/pytest-django
+
+
+
 gunicorn==20.1.0  # https://github.com/benoitc/gunicorn
 psycopg2==2.9.6  # https://github.com/psycopg/psycopg2
 sentry-sdk==1.25.1  # https://github.com/getsentry/sentry-python
