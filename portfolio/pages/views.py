@@ -6,7 +6,7 @@ from django.views import View
 from django.views.generic import TemplateView
 
 from portfolio.pages.forms import ContactUsModelForm
-from portfolio.pages.models import SiteSettings, Page, About, ContactUs, Project
+from portfolio.pages.models import SiteSettings, Page, About, ContactUs, Project, SkillCategory, SocialMedia
 
 
 class HomeView(View):
@@ -77,9 +77,20 @@ class ProjectView(View):
                 "page": page,
                 "project": project
             }
-            return render(request, "pages/project.html",context=context)
+            return render(request, "pages/project.html", context=context)
         except ObjectDoesNotExist:
             return render(request, "404.html")
+
+
+class SkillsView(View):
+    def get(self, request):
+        page = Page.objects.get(slug="skills")
+        skill_category = SkillCategory.objects.all()
+        context = {
+            "page": page,
+            "skill_category": skill_category
+        }
+        return render(request, "pages/skills.html", context=context)
 
 
 class SideBarView(TemplateView):
@@ -106,3 +117,11 @@ def breadcrumb_title(request):
         "portfolio": portfolio
     }
     return render(request, "shared/partials/breadcrumb_title.html", context=context)
+
+
+def render_social_media(request):
+    social_medias = SocialMedia.objects.all()
+    context = {
+        'social_medias': social_medias
+    }
+    return render(request, 'shared/social_media.html', context=context)
