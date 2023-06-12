@@ -1,5 +1,6 @@
 import datetime
 
+from ckeditor.fields import RichTextField
 from django.core import validators
 from django.db import models
 from django.db.models import CASCADE
@@ -36,7 +37,7 @@ class About(models.Model):
 
 class SkillCategory(models.Model):
     name = models.CharField(max_length=50)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -45,7 +46,8 @@ class SkillCategory(models.Model):
 class Skill(models.Model):
     category = models.ForeignKey(SkillCategory, on_delete=CASCADE)
     name = models.CharField(max_length=100)
-    thumbnail = models.ImageField()
+    thumbnail = models.ImageField(blank=True, null=True)
+    thumbnail_url = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return f"{self.name} ({self.category})"
@@ -69,7 +71,8 @@ class Project(models.Model):
     slug = models.SlugField(max_length=300)
     star_count = models.IntegerField()
     fork_count = models.IntegerField()
-    description = models.CharField(max_length=200)
+    short_description = models.CharField(max_length=200)
+    description = RichTextField()
 
     def __str__(self):
         return self.name
