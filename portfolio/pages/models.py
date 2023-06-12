@@ -29,7 +29,7 @@ class Page(models.Model):
 class About(models.Model):
     page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True, blank=True)
     heading = models.CharField(max_length=200)
-    body = models.TextField()
+    body = RichTextField()
 
     def __str__(self):
         return self.heading
@@ -85,3 +85,17 @@ class SocialMedia(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Education(models.Model):
+    Degree = models.CharField(max_length=300)
+    School = models.CharField(max_length=300)
+    country = models.CharField(max_length=150)
+    city = models.CharField(max_length=150)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    present = models.BooleanField(default=False)
+    description = RichTextField()
+
+    def __str__(self):
+        return f"{self.Degree} | {self.School}"
