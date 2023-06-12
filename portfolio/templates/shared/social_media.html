@@ -1,15 +1,9 @@
-{% load static %}
 <div class="social-media">
-  <div class="social-media-item">
-    <img width="12" src="{% static 'images/icons/instagram.svg' %}" alt="">
-  </div>
-  <div class="social-media-item">
-    <img width="12" src="{% static 'images/icons/twitter.svg' %}" alt="">
-  </div>
-  <div class="social-media-item">
-    <img width="12" src="{% static 'images/icons/linkedin.svg' %}" alt="">
-  </div>
-  <div class="social-media-item">
-    <img width="12" src="{% static 'images/icons/github.svg' %}" alt="">
-  </div>
+  {% for social_media in social_medias %}
+    <a href="{{ social_media.link }}">
+      <div class="social-media-item">
+        <img width="12" src="{{ social_media.icon.url }}" alt="{{ social_media.name }}">
+      </div>
+    </a>
+  {% endfor %}
 </div>
