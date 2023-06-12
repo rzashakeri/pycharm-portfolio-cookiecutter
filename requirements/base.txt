@@ -6,6 +6,7 @@ whitenoise==6.4.0  # https://github.com/evansd/whitenoise
 redis==4.5.5  # https://github.com/redis/redis-py
 python-dotenv==1.0.0
 django-render-partial==0.4  # https://github.com/utapyngo/django-render-partial
+django-ckeditor==6.5.1 # https://github.com/django-ckeditor/django-ckeditor
 # Django
 # ------------------------------------------------------------------------------
 django==4.1.9  # pyup: < 4.2  # https://www.djangoproject.com/
