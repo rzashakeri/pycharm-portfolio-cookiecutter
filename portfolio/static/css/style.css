@@ -801,18 +801,68 @@ table {
   padding: 0 5rem;
 }
 
-.project-head {
+.projects-head {
   margin-top: 2rem;
   margin-left: 10px;
   color: var(--color-text-primary);
 }
 
-.project-content {
+.projects-content {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 8rem;
   /*justify-content: center;*/
   /*align-items: center;*/
+}
+
+/* ================================================ */
+/* project */
+/* ================================================ */
+
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 1316px;
+}
+
+.project-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-badges {
+  display: flex;
+  color: var(--color-text-primary);
+  gap: 1rem;
+}
+
+.project-title {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--color-text-primary);
+}
+
+.project-description {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--color-text-primary);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.project-badge {
+  padding: 10px;
+  background-color: var(--color-header);
+  border-radius: 5px;
 }
 
 /* ================================================ */
