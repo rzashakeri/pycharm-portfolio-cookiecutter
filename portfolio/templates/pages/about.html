@@ -10,6 +10,6 @@
 {% block content %}
   <div class="about-section">
     <h1 class="about-title">{{ about.heading }}</h1>
-    <p class="about-description">{{ about.body }}</p>
+    <div class="about-description">{{ about.body|safe }}</div>
   </div>
 {% endblock content %}
