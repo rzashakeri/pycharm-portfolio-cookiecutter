@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
@@ -65,6 +66,20 @@ class ProjectsView(View):
             "projects": projects
         }
         return render(request, "pages/projects.html", context=context)
+
+
+class ProjectView(View):
+    def get(self, request, slug):
+        try:
+            project = Project.objects.get(slug=slug)
+            page = project.page
+            context = {
+                "page": page,
+                "project": project
+            }
+            return render(request, "pages/project.html",context=context)
+        except ObjectDoesNotExist:
+            return render(request, "404.html")
 
 
 class SideBarView(TemplateView):
